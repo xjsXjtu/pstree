@@ -1,0 +1,167 @@
+digraph Skills_Tree 
+{
+    label="Skills Tree";  
+    node [shape=ellipse];
+    
+    Josh_XIONG    [ label="Josh XIONG", fillcolor=green, color=red]
+    Josh_XIONG -> {
+        Audio               [ label = "Audio\n Codec & Rendering"];
+        Video_Image_Codec   [ label = "Video/Image\n Codec" ]; 
+        Computer_Vision     [ label = "Computer\n Vision"];
+        Machine_Learning    [ label = "Machine\n Learning"];
+        Computer_System     [ label = "Computer\n System"];
+        Android             [ label = "Android" ];
+        Robot               [ label = "Robot" ];
+        // Internet            [ label = "Internet" ];
+        Distribution        [ label = "Distribution" ]
+    }
+    Breadth_Knowledge [
+        label = "Broad Knowledge:\n Know some theory,\n or do a small related project", 
+        shape=ellipse]
+    Depth_Knowledge   [
+        label = "Deep Knowledge:\n Know theory,\n and do a project longer than 1 month", 
+        shape=ellipse,
+        style=filled, color = green ]
+    Recent_Plan       [
+        label = "Recent Plan:\n considered to be important,\n and plan to learn recently(should <3 area)", 
+        shape=ellipse,
+        style=filled, color = red ]
+    
+    {
+        Audio -> {
+            Audio_Codec     [label = "Audio Codec" ]
+            Audio_Render    [label = "Audio Rendering"]
+            Psychoacoustics [label = "Psychoacoustics"]
+        }
+        {
+            Audio_Codec -> {
+                Audio_Standards [label = "Standards"]
+                Audio_Tech      [label = "Technology"]
+            }
+            {
+                Audio_Standards -> {
+                    MP3         [label = "MP3\n 1993"]
+                    AAC         [label = "AAC\n 1997"]
+                    AC3         [label = "AC3\n 1992"]
+                    EAC3        [label = "EAC3", style=filled, color = green ]
+                    AC4         [label = "AC4\n 2015", style=filled, color = green ]
+                }
+                Audio_Tech -> {
+                    Waveform    [label = "Waveform\n coding"]
+                    SBR         [label = "SBR\n Spectral\n Band\n Replication"]
+                    PS          [label = "PS\n Parametric\n Stereo", style=filled, color = green ]
+                }
+                {
+                    Waveform -> {
+                        MDCT    [label = "MDCT", style=filled, color = green ]
+                        Huffman [label = "Huffman", style=filled, color = green ]
+                    }
+                }
+            }
+            Audio_Render -> {
+                HRTF    [label = "HRTF", style=filled, color = green ]
+                QMF     [label = "QMF", style=filled, color = green ]
+                ERB     [label = "ERB", style=filled, color = green ]
+                Echo    [label = "Echo\n Cancellation" ]
+            }
+            Psychoacoustics -> {
+                Masking_Effects         [label = "Masking\n Effects"]
+                Equal_Loudness_Contour  [label = "Equal\n Loudness\n Contour"]
+                Critical_Band           [label = "Critical\n Band"]
+                Sound_Localization      [label = "Sound\n Localization"]
+                Missing_Fundamental     [label = "Missing\n Fundamental"]                    
+            }
+        }
+        Video_Image_Codec -> {
+            Video_Standards [label = "Standards"]
+            Video_Tech      [label = "Technology"]
+        }
+        {
+            Video_Standards -> {                
+                MPEG4 [label = "MPEG4\n H263\n 2001"]
+                H264 [label = "H264\n AVC\n 2003"]
+                H265 [label = "H265\n HEVC\n 2013"]
+                VP8  [label = "VP8\n Google\n 2008"]
+            }
+            Video_Tech -> {
+                Chroma_Subsampling  [label = "Chroma\n Subsampling"]
+                DCT_II              [label = "DCT-II"]
+                Quant               [label = "Quant"]
+                Motion_Estimate     [label = "Motion\n Estimate"]
+                Encryption_Coding   [label = "Encryption\n Coding"]
+                Streaming           [label = "Streaming"]
+            }
+        }
+        Computer_Vision -> {
+            OpenCV              [ label = "OpenCV", style=filled, color = green]
+            Face                [ label = "Face Recognition", style=filled, color = green]
+            Obj_Track           [ label = "Object\n Tracking"]
+            Local_Feature       [ label = "Local\n Feature\n Detectors"]
+            Image_Stitch        [ label = "Image\n Stitch"]
+            Camera_Calibration  [ label = "Camera\n Calibration"]
+        }
+        {
+            Local_Feature -> {
+                HoG
+                DoG
+                LoG
+                Harris_Corner   [label = "Harris\n Corner"]
+                SIFT
+                SURF
+                LBP
+                Haar            [label = "Haar", style=filled, color = green ]
+                GoH             [label = "Gabor\n Oriented \n Hist", style=filled, color = green ]
+            }
+        }
+        Machine_Learning -> {
+            Adaboost    [ label = "Adaboost",        style=filled, color = green]
+            Dim_Reduce  [ label = "Dim \nReduction", style=filled, color = green]
+            Meanshift   [ label = "Meanshift",       style=filled, color = green]
+            Convex_Opt  [ label = "Convex Opt",      style=filled, color = green]
+            DP_Caffe    [ label = "Deep\n Learning\n Caffe", shape=box, style=filled, color = red ]
+            SVM         [ label = "SVM\nLibSVM"]
+            LR          [ label = "LR"]
+        }
+        Computer_System -> {
+                Perf_Opt   [label = "Performance\n Optimization" ]
+                Toolchain  [label = "Toolchain" ]
+                Virtual_Memory      [label = "Virtual\n Memory"]
+                Parallel_Computing  [label = "Parallel\n Computing"]
+        }
+        {
+            Perf_Opt -> {
+                ARM_x86_QDSP [label = "ARM\n x86\n QDSP", style=filled, color = green ]
+                SIMD                [label = "SIMD\n NEON\n SSE" , style=filled, color = green ]
+                Memory_Mountain     [label = "Memory\n Mountain" , style=filled, color = green ]
+                Cache               [label = "Cache"             , style=filled, color = green ]
+                OoO                 [label = "Out\n of\n Order"  , style=filled, color = green ]
+                Data_Stall          [label = "Data\n Stall"      , style=filled, color = green ]
+                Pipeline            [label = "Pipeline"]
+            }
+            Toolchain -> {
+                Compiler_loader [label = "Compiler\n Linker\n Loader", style=filled, color = green ]
+                GDB [label = "GDB", style=filled, color = green]
+            }
+            Parallel_Computing -> {
+                GPU    [label = "GPU\n CUDA"]
+                OpenCL [label = "OpenCL"]
+            }
+        }
+        Android -> {
+            NDK             [label = "NDK\n build", style=filled, color = green ]
+            Power           [label = "Power\n Measurement", style=filled, color = green ]
+            JNI
+            Media_Framework [label = "Media\n Framework"]
+            Application
+        }
+        Robot -> {
+            Localization [label = "Localization", style=filled, color = green ]
+            Movement_Control    [label = "PID\n Movement\n Control", style=filled, color = green ]
+            uC_OS               [label = "uC/OS-II", style=filled, color = green ]
+        }
+        Distribution -> {
+            MapReduce [ label = "MapReduce", style=filled, color = green ];
+            LevelDB   [ label = "LevelDB" ];
+        }
+    }
+}
