@@ -13,7 +13,7 @@ Basically it shows what I am/not good at.
     
     - [Red]   What areas are considered to be important, and plan to do a project recently
 
-0. How to update the graph
+1. How to update the graph
 ----
 This graph is defined by DOT language and rendered by Graphviz. 
 
