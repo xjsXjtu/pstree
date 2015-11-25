@@ -142,6 +142,12 @@ digraph Skills_Tree
                 Compiler_loader [label = "Compiler\n Linker\n Loader", style=filled, color = green ]
                 GDB [label = "GDB", style=filled, color = green]
             }
+            {
+                Compiler_loader -> {
+                    lib_type    [label = "Static\n Dynamic\n Library"]
+                    Os_Type     [label = "Android\n iOS\n Linux\n Windows"]
+                }
+            }
             Parallel_Computing -> {
                 GPU    [label = "GPU\n CUDA"]
                 OpenCL [label = "OpenCL"]
@@ -153,6 +159,15 @@ digraph Skills_Tree
             JNI
             Media_Framework [label = "Media\n Framework"]
             Application
+        }
+        {
+            Media_Framework -> {
+                Streaming_Protocol      [label = "Streaming\n Protocol"]
+                Container               [label = "Container\n Protocol"]
+                Codec                   [label = "Codec"]
+                Sync                    [label = "A\/V Sync"]
+                Framework               [label = "Framework\n Workflow"]
+            }
         }
         Robot -> {
             Localization [label = "Localization", style=filled, color = green ]
