@@ -5,8 +5,7 @@ digraph Skills_Tree
     
     Josh_XIONG    [ label="Josh XIONG", fillcolor=green, color=red]
     Josh_XIONG -> {
-        Audio               [ label = "Audio\n Codec & Rendering"];
-        Video_Image_Codec   [ label = "Video/Image\n Codec" ]; 
+        MultiMedia          [ label = "MultiMedia"]
         Computer_Vision     [ label = "Computer\n Vision"];
         Machine_Learning    [ label = "Machine\n Learning"];
         Computer_System     [ label = "Computer\n System"];
@@ -23,73 +22,91 @@ digraph Skills_Tree
         shape=ellipse,
         style=filled, color = green ]
     Recent_Plan       [
-        label = "Recent Plan:\n considered to be important,\n and plan to learn recently(should <3 area)", 
+        label = "Recent Plan:\n considered to be important,\n and plan to learn recently(should <3 area)\n P1: highest priority; P3: lowest priority", 
         shape=ellipse,
         style=filled, color = red ]
     
     {
-        Audio -> {
-            Audio_Codec     [label = "Audio Codec" ]
-            Audio_Render    [label = "Audio Rendering"]
-            Psychoacoustics [label = "Psychoacoustics"]
+        MultiMedia -> {
+            Codec                   [ label = "Codec & Rendering"]
+            Container_Protocol      [ label = "Container\n Protocol"]
+            Streaming_Protocol      [ label = "P2:\n Streaming\n Protocol", style=filled, color = red ]
+            Implementation          [ label = "Implementation"]
         }
         {
-            Audio_Codec -> {
-                Audio_Standards [label = "Standards"]
-                Audio_Tech      [label = "Technology"]
+            Codec -> {
+                Audio_Codec_Rendering       [ label = "Audio\n Codec & Rendering"];
+                Video_Image_Codec           [ label = "Video/Image\n Codec" ];
             }
             {
-                Audio_Standards -> {
-                    MP3         [label = "MP3\n 1993"]
-                    AAC         [label = "AAC\n 1997"]
-                    AC3         [label = "AC3\n 1992"]
-                    EAC3        [label = "EAC3", style=filled, color = green ]
-                    AC4         [label = "AC4\n 2015", style=filled, color = green ]
-                }
-                Audio_Tech -> {
-                    Waveform    [label = "Waveform\n coding"]
-                    SBR         [label = "SBR\n Spectral\n Band\n Replication"]
-                    PS          [label = "PS\n Parametric\n Stereo", style=filled, color = green ]
+                Audio_Codec_Rendering -> {
+                    Audio_Codec     [label = "Audio Codec" ]
+                    Audio_Render    [label = "Audio Rendering"]
+                    Psychoacoustics [label = "Psychoacoustics"]
                 }
                 {
-                    Waveform -> {
-                        MDCT    [label = "MDCT", style=filled, color = green ]
-                        Huffman [label = "Huffman", style=filled, color = green ]
+                    Audio_Codec -> {
+                        Audio_Standards [label = "Standards"]
+                        Audio_Tech      [label = "Technology"]
+                    }
+                    {
+                        Audio_Standards -> {
+                            MP3         [label = "MP3\n 1993"]
+                            AAC         [label = "AAC\n 1997"]
+                            AC3         [label = "AC3\n 1992"]
+                            EAC3        [label = "EAC3", style=filled, color = green ]
+                            AC4         [label = "AC4\n 2015", style=filled, color = green ]
+                        }
+                        Audio_Tech -> {
+                            Waveform    [label = "Waveform\n coding"]
+                            SBR         [label = "SBR\n Spectral\n Band\n Replication"]
+                            PS          [label = "PS\n Parametric\n Stereo", style=filled, color = green ]
+                        }
+                        {
+                            Waveform -> {
+                                MDCT    [label = "MDCT", style=filled, color = green ]
+                                Huffman [label = "Huffman", style=filled, color = green ]
+                            }
+                        }
+                    }
+                    Audio_Render -> {
+                        HRTF    [label = "HRTF", style=filled, color = green ]
+                        QMF     [label = "QMF", style=filled, color = green ]
+                        ERB     [label = "ERB", style=filled, color = green ]
+                        Echo    [label = "Echo\n Cancellation" ]
+                    }
+                    Psychoacoustics -> {
+                        Masking_Effects         [label = "Masking\n Effects"]
+                        Equal_Loudness_Contour  [label = "Equal\n Loudness\n Contour"]
+                        Critical_Band           [label = "Critical\n Band"]
+                        Sound_Localization      [label = "Sound\n Localization"]
+                        Missing_Fundamental     [label = "Missing\n Fundamental"]                    
+                    }
+                }
+                Video_Image_Codec -> {
+                    Video_Standards [label = "Standards"]
+                    Video_Tech      [label = "Technology"]
+                }
+                {
+                    Video_Standards -> {                
+                        MPEG4 [label = "MPEG4 Part 2\n H263\n 2001"]
+                        H264  [label = "MPEG4 Part 10\n H264\n AVC\n 2003"]
+                        H265  [label = "H265\n HEVC\n 2013"]
+                        VP8   [label = "VP8\n Google\n 2008"]
+                    }
+                    Video_Tech -> {
+                        Chroma_Subsampling  [label = "Chroma\n Subsampling"]
+                        DCT_II              [label = "DCT-II"]
+                        Quant               [label = "Quant"]
+                        Motion_Estimate     [label = "Motion\n Estimate"]
+                        Encryption_Coding   [label = "Encryption\n Coding"]
+                        Streaming           [label = "Streaming"]
                     }
                 }
             }
-            Audio_Render -> {
-                HRTF    [label = "HRTF", style=filled, color = green ]
-                QMF     [label = "QMF", style=filled, color = green ]
-                ERB     [label = "ERB", style=filled, color = green ]
-                Echo    [label = "Echo\n Cancellation" ]
-            }
-            Psychoacoustics -> {
-                Masking_Effects         [label = "Masking\n Effects"]
-                Equal_Loudness_Contour  [label = "Equal\n Loudness\n Contour"]
-                Critical_Band           [label = "Critical\n Band"]
-                Sound_Localization      [label = "Sound\n Localization"]
-                Missing_Fundamental     [label = "Missing\n Fundamental"]                    
-            }
-        }
-        Video_Image_Codec -> {
-            Video_Standards [label = "Standards"]
-            Video_Tech      [label = "Technology"]
-        }
-        {
-            Video_Standards -> {                
-                MPEG4 [label = "MPEG4\n H263\n 2001"]
-                H264 [label = "H264\n AVC\n 2003"]
-                H265 [label = "H265\n HEVC\n 2013"]
-                VP8  [label = "VP8\n Google\n 2008"]
-            }
-            Video_Tech -> {
-                Chroma_Subsampling  [label = "Chroma\n Subsampling"]
-                DCT_II              [label = "DCT-II"]
-                Quant               [label = "Quant"]
-                Motion_Estimate     [label = "Motion\n Estimate"]
-                Encryption_Coding   [label = "Encryption\n Coding"]
-                Streaming           [label = "Streaming"]
+            Implementation -> {
+                WebRTC
+                Android_MediaFramework [ label = "Android\n Media\n Framework"]
             }
         }
         Computer_Vision -> {
@@ -118,7 +135,7 @@ digraph Skills_Tree
             Dim_Reduce  [ label = "Dim \nReduction", style=filled, color = green]
             Meanshift   [ label = "Meanshift",       style=filled, color = green]
             Convex_Opt  [ label = "Convex Opt",      style=filled, color = green]
-            DP_Caffe    [ label = "Deep\n Learning\n Caffe", shape=box, style=filled, color = red ]
+            DP_Caffe    [ label = "P3: Deep\n Learning\n Caffe", style=filled, color = red ]
             SVM         [ label = "SVM\nLibSVM"]
             LR          [ label = "LR"]
         }
@@ -157,16 +174,14 @@ digraph Skills_Tree
             NDK             [label = "NDK\n build", style=filled, color = green ]
             Power           [label = "Power\n Measurement", style=filled, color = green ]
             JNI
-            Media_Framework [label = "Media\n Framework"]
+            Media_Framework [label = "P1: Media\n Framework", style=filled, color = red ]
             Application
         }
         {
             Media_Framework -> {
-                Streaming_Protocol      [label = "Streaming\n Protocol"]
-                Container               [label = "Container\n Protocol"]
-                Codec                   [label = "Codec"]
-                Sync                    [label = "A\/V Sync"]
-                Framework               [label = "Framework\n Workflow"]
+                Framework_Workflow      [label = "Framework\n Workflow"]
+                Local_Case              [label = "Case 1:\n Local File"]
+                Streaming_Case          [label = "Case 2:\n Streaming"]
             }
         }
         Robot -> {
