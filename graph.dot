@@ -56,16 +56,19 @@ digraph Skills_Tree
                             AC3         [label = "AC3\n 1992"]
                             EAC3        [label = "EAC3", style=filled, color = green ]
                             AC4         [label = "AC4\n 2015", style=filled, color = green ]
+                            Opus        [label = "Opus\n 2012"]
                         }
                         Audio_Tech -> {
                             Waveform    [label = "Waveform\n coding"]
                             SBR         [label = "SBR\n Spectral\n Band\n Replication"]
                             PS          [label = "PS\n Parametric\n Stereo", style=filled, color = green ]
+                            Resampler   [label = "Resampler", style=filled, color = green ]
                         }
                         {
                             Waveform -> {
-                                MDCT    [label = "MDCT", style=filled, color = green ]
-                                Huffman [label = "Huffman", style=filled, color = green ]
+                                MDCT        [label = "MDCT", style=filled, color = green ]
+                                Huffman     [label = "Huffman", style=filled, color = green ]
+                                Audio_Quant [label = "Quantization" ]
                             }
                         }
                     }
@@ -100,9 +103,18 @@ digraph Skills_Tree
                         Quant               [label = "Quant"]
                         Motion_Estimate     [label = "Motion\n Estimate"]
                         Encryption_Coding   [label = "Encryption\n Coding"]
-                        Streaming           [label = "Streaming"]
                     }
                 }
+            }
+            Container_Protocol -> {
+                MP4
+                FLV
+                MPEG_TS     [label = "MPEG-TS"]
+            }
+            Streaming_Protocol -> {
+                HTTP
+                RTMP
+                Others      [label = "..."]
             }
             Implementation -> {
                 WebRTC
